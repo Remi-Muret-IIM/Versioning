@@ -43,6 +43,9 @@ public class GlassResetter : MonoBehaviour
         foreach (var col in colliders)
             col.enabled = false;
 
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnRoundEnd(false);
+
         yield return new WaitForSeconds(resetDelay);
 
         transform.position = initialPosition;
