@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class HandControllerPouring2D : MonoBehaviour
 {
-    [Header("Hand Settings")]
     public float moveSpeed = 10f;
     [Range(0f, 1f)] public float drunkIntensity = 0f;
     public float maxDrunk = 1f;
 
-    [Header("Bottle Handling")]
-    public Transform heldBottle;
-
+    private Transform heldBottle;
     private Transform currentPourVisual;
 
     void Update()
