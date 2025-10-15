@@ -6,12 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Paramètres de manche")]
     public int minBottles = 1;
     public int maxBottles = 3;
     public float totalTargetFill = 100f;
-
-    [Header("Verre")]
     public GameObject glassPrefab;
     public float delayBeforeNextRound = 1f;
 
