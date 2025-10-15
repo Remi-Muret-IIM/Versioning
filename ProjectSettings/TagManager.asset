@@ -4,12 +4,15 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Bottle
+  - Bottle1
+  - Bottle2
+  - Bottle3
+  - Bottle4
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Bottle
+  - 
   - Water
   - UI
   - 

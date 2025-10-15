@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HandControllerPouring2D : MonoBehaviour
 {
-    [Header("Main Settings")]
+    [Header("Hand Settings")]
     public float moveSpeed = 10f;
     [Range(0f, 1f)] public float chaosLevel = 0f;
     public float maxChaos = 1f;
@@ -50,62 +50,63 @@ public class HandControllerPouring2D : MonoBehaviour
     }
 
     void HandleClick()
-{
-    if (Input.GetMouseButtonDown(0))
     {
-        if (heldBottle == null)
+        if (Input.GetMouseButtonDown(0))
         {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-            if (hit.collider != null && hit.collider.CompareTag("Bottle"))
+            if (heldBottle == null)
             {
-                heldBottle = hit.collider.transform;
-                heldBottle.SetParent(transform);
-                heldBottle.localPosition = new Vector3(0, -0.5f, 0);
-                heldBottle.localRotation = Quaternion.identity;
+                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
+                if (hit != null && (
+                        hit.CompareTag("Bottle1") ||
+                        hit.CompareTag("Bottle2") ||
+                        hit.CompareTag("Bottle3") ||
+                        hit.CompareTag("Bottle4")))
+                {
+                    heldBottle = hit.transform;
+                    heldBottle.SetParent(transform);
+                    heldBottle.localPosition = new Vector3(0, -0.5f, 0);
+                    heldBottle.localRotation = Quaternion.identity;
+
+                    Rigidbody2D rb = heldBottle.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                        rb.bodyType = RigidbodyType2D.Kinematic;
+                }
+            }
+            else
+            {
                 Rigidbody2D rb = heldBottle.GetComponent<Rigidbody2D>();
                 if (rb != null)
-                    rb.bodyType = RigidbodyType2D.Kinematic;
-            }
-        }
-        else
-        {
-            Rigidbody2D rb = heldBottle.GetComponent<Rigidbody2D>();
-            if (rb != null)
-                rb.bodyType = RigidbodyType2D.Dynamic; 
+                    rb.bodyType = RigidbodyType2D.Dynamic; 
 
-            heldBottle.SetParent(null);
-            heldBottle = null;
+                heldBottle.SetParent(null);
+                heldBottle = null;
 
-            if (currentPourVisual != null)
-            {
-                Destroy(currentPourVisual.gameObject);
-                currentPourVisual = null;
+                if (currentPourVisual != null)
+                {
+                    Destroy(currentPourVisual.gameObject);
+                    currentPourVisual = null;
+                }
             }
         }
     }
-}
 
-void HandleRotation()
-{
-    if (heldBottle != null)
+    void HandleRotation()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0)
-        { 
-            float angle = heldBottle.localEulerAngles.z;
-            angle = (angle > 180f) ? angle - 360f : angle;
-            angle -= scroll * 50f;
-            angle = Mathf.Clamp(angle, -90f, 90f);
-            heldBottle.localEulerAngles = new Vector3(0, 0, angle);
+        if (heldBottle != null)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (scroll != 0)
+            { 
+                float angle = heldBottle.localEulerAngles.z;
+                angle = (angle > 180f) ? angle - 360f : angle;
+                angle -= scroll * 50f;
+                angle = Mathf.Clamp(angle, -90f, 90f);
+                heldBottle.localEulerAngles = new Vector3(0, 0, angle);
+            }
         }
     }
-}
-
-
-
 
     void HandlePouringVisual()
     {
