@@ -5,6 +5,7 @@ public class Glass : MonoBehaviour
 {
     public float fillSpeed = 10f;
     public float margin = 10f;
+
     [Range(0f, 100f)] public float fillGlobal = 0f;
     [Range(0f, 100f)] public float fillBottle1 = 0f;
     [Range(0f, 100f)] public float fillBottle2 = 0f;
@@ -21,7 +22,7 @@ public class Glass : MonoBehaviour
             IncreaseFill(activeBottleTag);
         }
 
-        if (fillGlobal == 100f && !resultChecked)
+        if (fillGlobal >= 100f && !resultChecked)
         {
             CheckGameConditions();
         }
@@ -30,17 +31,13 @@ public class Glass : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (IsBottleTag(other.tag))
-        {
             activeBottleTag = other.tag;
-        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (IsBottleTag(other.tag) && other.tag == activeBottleTag)
-        {
             activeBottleTag = null;
-        }
     }
 
     void IncreaseFill(string tag)
@@ -66,14 +63,12 @@ public class Glass : MonoBehaviour
     void CheckGameConditions()
     {
         if (GameManager.Instance == null)
-        {
             return;
-        }
 
         resultChecked = true;
         bool win = true;
 
-        Dictionary<string, float> targets = GameManager.Instance.targetQuantities;
+        var targets = GameManager.Instance.targetQuantities;
         List<string> allBottles = new List<string> { "Bottle1", "Bottle2", "Bottle3", "Bottle4" };
 
         foreach (string bottle in allBottles)
@@ -87,10 +82,7 @@ public class Glass : MonoBehaviour
             }
         }
 
-        if (win)
-            Debug.Log("Victoire !");
-        else
-            Debug.Log("Défaite...");
+        GameManager.Instance.OnRoundEnd(win);
     }
 
     float GetFill(string tag)

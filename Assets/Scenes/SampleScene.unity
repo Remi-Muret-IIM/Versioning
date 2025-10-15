@@ -739,6 +739,8 @@ MonoBehaviour:
   minBottles: 1
   maxBottles: 3
   totalTargetFill: 100
+  glassPrefab: {fileID: 8026220108369532010, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
+  delayBeforeNextRound: 1
 --- !u!4 &2087747686
 Transform:
   m_ObjectHideFlags: 0
@@ -754,63 +756,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5089250314772583854
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3685120286352241487, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8026220108369532010, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
-      propertyPath: m_Name
-      value: Verre
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
 --- !u!1001 &8177629244182461942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -879,6 +824,5 @@ SceneRoots:
   - {fileID: 943714867}
   - {fileID: 1415535340}
   - {fileID: 1895972200}
-  - {fileID: 5089250314772583854}
   - {fileID: 1096670070}
   - {fileID: 674630118}
