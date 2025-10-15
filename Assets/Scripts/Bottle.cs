@@ -1,26 +1,46 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Bottle : MonoBehaviour
 {
-    public int childIndex = 0;
     public float targetZ = 100f;
+    public float emissionRate = 50f;
+
+    private GameObject child;
+    private new ParticleSystem particleSystem;
+    private ParticleSystem.EmissionModule emission;
+    private Glass glass;
+
+    private void Awake()
+    {
+        child = transform.GetChild(0).gameObject;
+        particleSystem = child.GetComponent<ParticleSystem>();
+        emission = particleSystem.emission;
+    }
 
     void Update()
     {
-        HandleChildActivation();
+        HandleEmissionRate();
     }
 
-    void HandleChildActivation()
+    void HandleEmissionRate()
     {
         float zRotation = transform.eulerAngles.z;
-        zRotation = (zRotation + 360f) % 360f;
 
-        if (childIndex >= transform.childCount) return;
-        Transform child = transform.GetChild(childIndex);
+        if (zRotation > 180f)
+            zRotation -= 360f;
 
-        if (zRotation >= targetZ)
-            child.gameObject.SetActive(true);
+        if (zRotation >= targetZ || zRotation <= -targetZ)
+            emission.rateOverTime = emissionRate;
         else
-            child.gameObject.SetActive(false);
+            emission.rateOverTime = 0f;
+    }
+
+    public void RegisterGlass(Glass g)
+    {
+        glass = g;
+        var trigger = particleSystem.trigger;
+        trigger.enabled = true;
+        trigger.SetCollider(0, glass.GetComponent<Collider2D>());
     }
 }

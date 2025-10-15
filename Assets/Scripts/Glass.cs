@@ -12,32 +12,17 @@ public class Glass : MonoBehaviour
     [Range(0f, 100f)] public float fillBottle3 = 0f;
     [Range(0f, 100f)] public float fillBottle4 = 0f;
 
-    private string activeBottleTag = null;
     private bool resultChecked = false;
 
     void Update()
     {
-        if (activeBottleTag != null && fillGlobal < 100.0f)
-        {
-            IncreaseFill(activeBottleTag);
-        }
-
         if (fillGlobal >= 100f && !resultChecked)
-        {
             CheckGameConditions();
-        }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnParticleCollision(GameObject other)
     {
-        if (IsBottleTag(other.tag))
-            activeBottleTag = other.tag;
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (IsBottleTag(other.tag) && other.tag == activeBottleTag)
-            activeBottleTag = null;
+        IncreaseFill(other.tag);
     }
 
     void IncreaseFill(string tag)
@@ -53,11 +38,6 @@ public class Glass : MonoBehaviour
         }
 
         fillGlobal = Mathf.Clamp(fillGlobal + delta, 0f, 100f);
-    }
-
-    bool IsBottleTag(string tag)
-    {
-        return tag == "Bottle1" || tag == "Bottle2" || tag == "Bottle3" || tag == "Bottle4";
     }
 
     void CheckGameConditions()
@@ -77,9 +57,7 @@ public class Glass : MonoBehaviour
             float target = targets.ContainsKey(bottle) ? targets[bottle] : 0f;
 
             if (Mathf.Abs(current - target) > margin)
-            {
                 win = false;
-            }
         }
 
         GameManager.Instance.OnRoundEnd(win);

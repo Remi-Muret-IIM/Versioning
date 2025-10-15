@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int minBottles = 1;
     public int maxBottles = 3;
     public float totalTargetFill = 100f;
+    public List<GameObject> bottles;
     public GameObject glassPrefab;
     public float delayBeforeNextRound = 1f;
 
@@ -38,9 +39,15 @@ public class GameManager : MonoBehaviour
         GenerateNewTarget();
 
         currentGlass = Instantiate(glassPrefab, glassPrefab.transform.position, Quaternion.identity);
+
+        Glass g = currentGlass.GetComponent<Glass>();
+        foreach (var bottle in bottles)
+        {
+            bottle.GetComponent<Bottle>().RegisterGlass(g);
+        }
     }
 
-    public void GenerateNewTarget()
+    private void GenerateNewTarget()
     {
         targetQuantities.Clear();
 
