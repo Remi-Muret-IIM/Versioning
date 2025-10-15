@@ -8,6 +8,7 @@ TagManager:
   - Bottle2
   - Bottle3
   - Bottle4
+  - Glass
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - particule
+  - bouteille
   - 
   - 
   - 
