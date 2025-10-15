@@ -1,24 +1,35 @@
 using UnityEngine;
 
-public class Glass2D : MonoBehaviour
+public class Glass : MonoBehaviour
 {
-    public float fillLevel = 0f;
-    public float maxFill = 1f;
-    public SpriteRenderer fillVisual;
+    [Range(0f, 100f)]
+    public float fillPercent = 0f;
+    public float fillSpeed = 10f;
 
-    public void Fill(float amount)
+    private bool isFilling = false;
+
+    void Update()
     {
-        fillLevel = Mathf.Clamp(fillLevel + amount, 0f, maxFill);
-        UpdateVisual();
-        if (fillLevel >= maxFill)
+        if (isFilling)
         {
-            Debug.Log("Verre rempli !");
+            fillPercent += fillSpeed * Time.deltaTime;
+            fillPercent = Mathf.Clamp(fillPercent, 0f, 100f);
         }
     }
 
-    void UpdateVisual()
+    void OnTriggerEnter(Collider other)
     {
-        if (fillVisual != null)
-            fillVisual.transform.localScale = new Vector3(1f, fillLevel / maxFill, 1f);
+        if (other.CompareTag("Bottle1"))
+        {
+            isFilling = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Bottle1"))
+        {
+            isFilling = false;
+        }
     }
 }
