@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1186192593334190954}
   - component: {fileID: 7623360771787811000}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,13 +296,13 @@ Transform:
   m_GameObject: {fileID: 8026220108369532010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1850449279517004705}
   - {fileID: 5414214721511345390}
   - {fileID: 5294113523166658440}
+  - {fileID: 1850449279517004705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3683696689102591349
@@ -395,8 +395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52927d05e0843a6499df1479a1026046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillPercent: 0
-  fillSpeed: 10
+  fillSpeed: 30
+  fillGlobal: 0
+  fillBottle1: 0
+  fillBottle2: 0
+  fillBottle3: 0
+  fillBottle4: 0
 --- !u!1 &8393303316017501022
 GameObject:
   m_ObjectHideFlags: 0

@@ -4937,7 +4937,7 @@ GameObject:
   - component: {fileID: -8417899887404079722}
   - component: {fileID: 4407513712771915651}
   m_Layer: 0
-  m_Name: Bottle1
+  m_Name: Bouteille1
   m_TagString: Bottle1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
