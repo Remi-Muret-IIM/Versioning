@@ -96,7 +96,7 @@ public class HandControllerPouring2D : MonoBehaviour
                 float angle = heldBottle.localEulerAngles.z;
                 angle = (angle > 180f) ? angle - 360f : angle;
                 angle -= scroll * 50f;
-                angle = Mathf.Clamp(angle, -15f, 105f);
+                angle = Mathf.Clamp(angle, -15f, 110f);
                 heldBottle.localEulerAngles = new Vector3(0, 0, angle);
             }
         }

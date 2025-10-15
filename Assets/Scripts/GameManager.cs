@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Paramètres de manche")]
     public int minBottles = 1;
     public int maxBottles = 3;
     public float totalTargetFill = 100f;
 
+    [Header("Verre")]
+    public GameObject glassPrefab;
+    public float delayBeforeNextRound = 1f;
+
     [HideInInspector] public Dictionary<string, float> targetQuantities = new Dictionary<string, float>();
+    private GameObject currentGlass;
 
     void Awake()
     {
@@ -18,7 +25,22 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(StartNewRound());
+    }
+
+    public IEnumerator StartNewRound()
+    {
+        yield return new WaitForSeconds(delayBeforeNextRound);
+
+        if (currentGlass != null)
+        {
+            Destroy(currentGlass);
+            yield return new WaitForSeconds(0.2f);
+        }
+
         GenerateNewTarget();
+
+        currentGlass = Instantiate(glassPrefab, glassPrefab.transform.position, Quaternion.identity);
     }
 
     public void GenerateNewTarget()
@@ -40,27 +62,33 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < chosenBottles.Count; i++)
         {
             string bottle = chosenBottles[i];
-
             float amount;
+
             if (i == chosenBottles.Count - 1)
-            {
                 amount = remaining;
-            }
             else
-            {
                 amount = Random.Range(10f, remaining - 10f * (chosenBottles.Count - i - 1));
-            }
 
             remaining -= amount;
             targetQuantities[bottle] = Mathf.Round(amount);
         }
 
-        string debugMsg = "Objectif de la manche :\n";
+        string debugMsg = "Objectif :\n";
         foreach (var kvp in targetQuantities)
         {
             debugMsg += $"{kvp.Key} → {kvp.Value}%\n";
         }
 
         Debug.Log(debugMsg);
+    }
+
+    public void OnRoundEnd(bool win)
+    {
+        if (win)
+            Debug.Log("Victoire !");
+        else
+            Debug.Log("Défaite...");
+
+        StartCoroutine(StartNewRound());
     }
 }
