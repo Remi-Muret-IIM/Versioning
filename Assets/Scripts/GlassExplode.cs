@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GlassResetter : MonoBehaviour
+public class GlassExplode : MonoBehaviour
 {
     public GameObject explosionEffectPrefab;
     public float resetDelay = 1.5f;

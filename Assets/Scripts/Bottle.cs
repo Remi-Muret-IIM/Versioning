@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RotationTrigger : MonoBehaviour
+public class Bottle : MonoBehaviour
 {
     public int childIndex = 0;
     public float targetZ = 100f;

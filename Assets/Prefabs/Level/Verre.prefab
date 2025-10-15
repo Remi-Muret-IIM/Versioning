@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531808198190214541}
   m_Layer: 0
-  m_Name: visuel
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1850449279517004705}
   - {fileID: 5414214721511345390}
+  - {fileID: 1850449279517004705}
   - {fileID: 5294113523166658440}
   m_Father: {fileID: 3685120286352241487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 3683696689102591349}
   - component: {fileID: 8619130034679161196}
   - component: {fileID: 7760614167415777213}
+  - component: {fileID: 627328514583664267}
   m_Layer: 0
   m_Name: Verre
   m_TagString: Glass
@@ -434,6 +435,22 @@ MonoBehaviour:
   fillBottle2: 0
   fillBottle3: 0
   fillBottle4: 0
+--- !u!114 &627328514583664267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8026220108369532010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52927d05e0843a6499df1479a1026046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffectPrefab: {fileID: 6821103928171903672, guid: 32bb85f280ce4e142ac06c4598521bde, type: 3}
+  resetDelay: 1.5
+  visualObject: {fileID: 5567710831122616570}
+  fallAngleThreshold: 60
 --- !u!1 &8393303316017501022
 GameObject:
   m_ObjectHideFlags: 0
