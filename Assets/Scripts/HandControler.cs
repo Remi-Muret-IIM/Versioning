@@ -9,10 +9,6 @@ public class HandControllerPouring2D : MonoBehaviour
 
     [Header("Bottle Handling")]
     public Transform heldBottle;
-    public Transform pourVisualPrefab;  
-    public Transform pourPoint;         
-    public float pourThreshold = 30f;   
-    public float pourRate = 0.5f;       
 
     private Transform currentPourVisual;
 
