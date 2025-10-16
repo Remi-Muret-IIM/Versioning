@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 531808198190214541}
   m_Layer: 0
-  m_Name: visuel
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1850449279517004705}
   - {fileID: 5414214721511345390}
+  - {fileID: 1850449279517004705}
   - {fileID: 5294113523166658440}
   m_Father: {fileID: 3685120286352241487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -365,7 +365,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &8619130034679161196
+--- !u!60 &1734053473184955277
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -411,10 +411,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.6, y: 0.4}
-      - {x: -0.6, y: 0.4}
-      - {x: -0.35, y: -0.45}
-      - {x: 0.35, y: -0.45}
+    - - {x: 0.45, y: -0.1}
+      - {x: -0.45, y: -0.1}
+      - {x: -0.34, y: -0.48}
+      - {x: 0.34, y: -0.48}
   m_UseDelaunayMesh: 0
 --- !u!114 &258541743603052469
 MonoBehaviour:

@@ -47,5 +47,10 @@ MonoBehaviour:
   minBottles: 1
   maxBottles: 3
   totalTargetFill: 100
+  bottles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   glassPrefab: {fileID: 8026220108369532010, guid: bcf053ef737c96444a9f31d874d6639c, type: 3}
   delayBeforeNextRound: 1

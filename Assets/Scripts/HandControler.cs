@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class HandControllerPouring2D : MonoBehaviour
+public class HandController : MonoBehaviour
 {
     public float moveSpeed = 10f;
     [Range(0f, 1f)] public float drunkIntensity = 0f;
     public float maxDrunk = 1f;
 
     private Transform heldBottle;
-    private Transform currentPourVisual;
 
     void Update()
     {
@@ -73,12 +72,6 @@ public class HandControllerPouring2D : MonoBehaviour
 
                 heldBottle.SetParent(null);
                 heldBottle = null;
-
-                if (currentPourVisual != null)
-                {
-                    Destroy(currentPourVisual.gameObject);
-                    currentPourVisual = null;
-                }
             }
         }
     }
@@ -93,7 +86,7 @@ public class HandControllerPouring2D : MonoBehaviour
                 float angle = heldBottle.localEulerAngles.z;
                 angle = (angle > 180f) ? angle - 360f : angle;
                 angle -= scroll * 50f;
-                angle = Mathf.Clamp(angle, -15f, 110f);
+                angle = Mathf.Clamp(angle, -60f, 110f);
                 heldBottle.localEulerAngles = new Vector3(0, 0, angle);
             }
         }
