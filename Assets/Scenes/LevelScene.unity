@@ -476,6 +476,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouteille1
       objectReference: {fileID: 0}
+    - target: {fileID: 6434113374891215961, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: CollisionModule.maxCollisionShapes
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434113374891215961, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: CollisionModule.multiplyColliderForceByParticleSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864768986712426904, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 6864768986712426904, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: m_RenderMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6864768986712426904, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7905035701806523419, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -937,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 5138485072604377128, guid: 547bc72dd4c2a4d4ea8434c5756f52a3, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834247340033171310, guid: 547bc72dd4c2a4d4ea8434c5756f52a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.48
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
