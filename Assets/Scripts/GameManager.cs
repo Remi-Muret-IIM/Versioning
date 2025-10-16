@@ -86,12 +86,21 @@ public class GameManager : MonoBehaviour
         Debug.Log(debugMsg);
     }
 
+    public float drunkIncreaseOnWin = 0.1f;
+
     public void OnRoundEnd(bool win)
     {
         if (win)
             Debug.Log("Victoire !");
         else
             Debug.Log("Défaite...");
+
+        if (win)
+        {
+            var hand = GameObject.FindAnyObjectByType<HandController>(FindObjectsInactive.Exclude);
+            if (hand != null)
+                hand.IncreaseDrunk(drunkIncreaseOnWin);
+        }
 
         StartCoroutine(StartNewRound());
     }
