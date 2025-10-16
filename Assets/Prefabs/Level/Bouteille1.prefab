@@ -4847,6 +4847,7 @@ GameObject:
   - component: {fileID: -4511477885739880710}
   - component: {fileID: -8417899887404079722}
   - component: {fileID: 4407513712771915651}
+  - component: {fileID: 14026556619342600}
   m_Layer: 7
   m_Name: Bouteille1
   m_TagString: Bottle1
@@ -5003,3 +5004,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetZ: 105
   emissionRate: 50
+--- !u!114 &14026556619342600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204566021710856094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5bb601d9937874da2b2216401a18dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: 6c8bb19806d7d4242a2c6e06d58072e7, type: 3}
