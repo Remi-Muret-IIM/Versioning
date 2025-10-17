@@ -4,10 +4,9 @@ using UnityEngine.Rendering.Universal;
 
 public class PostProcessingIncrement : MonoBehaviour
 {
-    [Header("Référence du Volume (ton prefab 'Bloom')")]
+    [Header("Référence du Volume")]
     public Volume bloomVolume;
 
-    // Références internes aux overrides
     private Bloom bloom;
     private ChromaticAberration chromatic;
     private Vignette vignette;
@@ -36,7 +35,6 @@ public class PostProcessingIncrement : MonoBehaviour
             return;
         }
 
-        // Récupère les effets depuis le Volume Profile du prefab
         bloomVolume.profile.TryGet(out bloom);
         bloomVolume.profile.TryGet(out chromatic);
         bloomVolume.profile.TryGet(out vignette);

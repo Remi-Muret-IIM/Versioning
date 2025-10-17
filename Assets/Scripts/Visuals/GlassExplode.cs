@@ -48,7 +48,6 @@ public class GlassExplode : MonoBehaviour
             Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
             audioSource.clip = ExplosionClip;
             audioSource.Play();
-            Debug.Log("boom");
 
         if (visualObject != null)
             visualObject.SetActive(false);

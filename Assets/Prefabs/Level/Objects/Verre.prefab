@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae95a0e777ea14882b1c451fd7ec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillSpeed: 20
+  fillSpeed: 35
   margin: 10
   fillGlobal: 0
   fillLiquid1: 0

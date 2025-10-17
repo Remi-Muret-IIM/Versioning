@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -83,8 +82,6 @@ public class GameManager : MonoBehaviour
             string bottleTag = selectedBottles[i].tag;
             targetQuantities[bottleTag] = targetFill;
             remainingFill -= targetFill;
-
-            Debug.Log($"Target généré: {bottleTag} -> {targetFill}%");
         }
 
         if (currentGlass != null)
@@ -108,7 +105,6 @@ public class GameManager : MonoBehaviour
     {
         if (win)
         {
-            Debug.Log("Victoire !");
             if (audioSource != null && WinSound != null)
             {
                 audioSource.clip = WinSound;
@@ -124,7 +120,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Défaite...");
             if (audioSource != null && LooseSound != null)
             {
                 audioSource.clip = LooseSound;
@@ -142,7 +137,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(StartNewRound());
     }
 
-     public void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
