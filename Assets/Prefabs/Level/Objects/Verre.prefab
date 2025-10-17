@@ -332,41 +332,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &258541743603052469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8026220108369532010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bae95a0e777ea14882b1c451fd7ec2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillSpeed: 10
-  margin: 10
-  fillGlobal: 0
-  fillBottle1: 0
-  fillBottle2: 0
-  fillBottle3: 0
-  fillBottle4: 0
---- !u!114 &-7609184834859548559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8026220108369532010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52927d05e0843a6499df1479a1026046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionEffectPrefab: {fileID: 6821103928171903672, guid: 32bb85f280ce4e142ac06c4598521bde, type: 3}
-  resetDelay: 1.5
-  visualObject: {fileID: 5567710831122616570}
-  fallAngleThreshold: 60
 --- !u!60 &1734053473184955277
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -418,7 +383,7 @@ PolygonCollider2D:
       - {x: -0.34, y: -0.48}
       - {x: 0.34, y: -0.48}
   m_UseDelaunayMesh: 0
---- !u!114 &8679785336836954168
+--- !u!114 &258541743603052469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8026220108369532010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b566839e301a1a7409444b47dfc04a2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bae95a0e777ea14882b1c451fd7ec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillSpeed: 20
@@ -453,4 +418,4 @@ MonoBehaviour:
   resetDelay: 1.5
   visualObject: {fileID: 5567710831122616570}
   fallAngleThreshold: 60
-  ExplosionClip: {fileID: 0}
+  ExplosionClip: {fileID: 8300000, guid: b6f0aa9abc9dc5641818ca2a43bfacc0, type: 3}
