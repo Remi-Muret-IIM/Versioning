@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd8409af4e13bf540918f2c2d5efafe6
+guid: f7d7249a2c56c2843bfdf38ea71a33aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7585009627398372457
-    second: fond_0
+      213: -6997220036645437445
+    second: etagere-murale-en-bois-l160cm-effet-bois-vieilli-fred_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fond_0
+      name: etagere-murale-en-bois-l160cm-effet-bois-vieilli-fred_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1000
-        height: 652
+        x: 101
+        y: 233
+        width: 572
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79380055ee1acb690800000000000000
-      internalID: -7585009627398372457
+      spriteID: bffb0841371e4ee90800000000000000
+      internalID: -6997220036645437445
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fond_0: -7585009627398372457
+      etagere-murale-en-bois-l160cm-effet-bois-vieilli-fred_0: -6997220036645437445
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
