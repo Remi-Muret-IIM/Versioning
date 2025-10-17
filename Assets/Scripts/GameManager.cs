@@ -39,8 +39,11 @@ public class GameManager : MonoBehaviour
         GenerateNewTarget();
 
         currentGlass = Instantiate(glassPrefab, glassPrefab.transform.position, Quaternion.identity);
-
         Glass g = currentGlass.GetComponent<Glass>();
+        
+        // Notifier les observateurs du nouveau verre
+        OnGlassSpawned?.Invoke(g);
+
         foreach (var bottle in bottles)
         {
             bottle.GetComponent<Bottle>().RegisterGlass(g);
@@ -104,4 +107,6 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(StartNewRound());
     }
+
+    public System.Action<Glass> OnGlassSpawned;
 }

@@ -43,7 +43,6 @@ public class GlassExplode : MonoBehaviour
         foreach (var col in colliders)
             col.enabled = false;
 
-        // Ajoute cet appel pour signaler la fin de manche (défaite)
         if (GameManager.Instance != null)
             GameManager.Instance.OnRoundEnd(false);
 
