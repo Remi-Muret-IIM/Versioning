@@ -197,7 +197,7 @@ MonoBehaviour:
   liquid1Color: {r: 0, g: 1, b: 0, a: 1}
   liquid2Color: {r: 1, g: 0, b: 0, a: 1}
   liquid3Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  liquid4Color: {r: 0, g: 0, b: 1, a: 1}
+  liquid4Color: {r: 0.45937166, g: 0.62533706, b: 0.8773585, a: 1}
 --- !u!114 &3942721969275621399
 MonoBehaviour:
   m_ObjectHideFlags: 0
