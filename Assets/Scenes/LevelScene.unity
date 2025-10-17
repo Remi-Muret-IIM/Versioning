@@ -317,7 +317,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 081dfe1e40ddf7c4aa14ca31905b2a96, type: 3}
     - target: {fileID: 8427516912659801041, guid: e8e518b129635c047ad29a39f389485e, type: 3}
       propertyPath: m_Volume
-      value: 0.02
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9039360529946599808, guid: e8e518b129635c047ad29a39f389485e, type: 3}
       propertyPath: m_Volume
@@ -630,7 +630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.08627451, b: 0.08627451, a: 0.33333334}
+  m_Color: {r: 0.3529412, g: 0.52156866, b: 0.57254905, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -680,7 +680,7 @@ RectTransform:
   m_GameObject: {fileID: 215947210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2284, y: 2.2284, z: 2.2284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1860975918}
@@ -690,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: 100}
+  m_AnchoredPosition: {x: 554, y: -152}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &353947595
@@ -979,10 +979,10 @@ MonoBehaviour:
   - {fileID: 143253897}
   targetColor: {r: 1, g: 1, b: 1, a: 0.5}
   bottleKeys:
-  - Bottle
-  - Bottle
-  - Bottle
-  - Bottle
+  - Liquid1
+  - Liquid2
+  - Liquid3
+  - Liquid4
 --- !u!1 &464927277
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1200,7 @@ RectTransform:
   m_GameObject: {fileID: 580930063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2284, y: 2.2284, z: 2.2284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1160619461}
@@ -1210,7 +1210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92.03714, y: 105.955444}
+  m_AnchoredPosition: {x: 1015.3499, y: -138.73001}
   m_SizeDelta: {x: 90.0743, y: 88.0891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &649022404
@@ -1238,7 +1238,7 @@ RectTransform:
   m_GameObject: {fileID: 649022404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2284, y: 2.2284, z: 2.2284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1498557503}
@@ -1248,7 +1248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: 100}
+  m_AnchoredPosition: {x: 776.82996, y: -152}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &671573275
@@ -1412,6 +1412,10 @@ PrefabInstance:
     - target: {fileID: 1373485423124149318, guid: 1e781656980c04842be2fb87801ad28b, type: 3}
       propertyPath: m_Name
       value: Bouteille2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1373485423124149318, guid: 1e781656980c04842be2fb87801ad28b, type: 3}
+      propertyPath: m_TagString
+      value: Liquid2
       objectReference: {fileID: 0}
     - target: {fileID: 7319614088797579531, guid: 1e781656980c04842be2fb87801ad28b, type: 3}
       propertyPath: m_Sprite
@@ -1845,6 +1849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouteille1
       objectReference: {fileID: 0}
+    - target: {fileID: 5204566021710856094, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
+      propertyPath: m_TagString
+      value: Liquid1
+      objectReference: {fileID: 0}
     - target: {fileID: 6434113374891215961, guid: fda7525c69d28b24492b8ebf95a88854, type: 3}
       propertyPath: CollisionModule.maxCollisionShapes
       value: 1000
@@ -2066,7 +2074,7 @@ RectTransform:
   m_GameObject: {fileID: 1037327307}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.2284, y: 2.2284, z: 2.2284}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1107206073}
@@ -2076,7 +2084,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -281, y: 100}
+  m_AnchoredPosition: {x: 184.09193, y: -152}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1043408923
@@ -2515,7 +2523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.08627451, b: 0.08627451, a: 0.33333334}
+  m_Color: {r: 0.8941177, g: 0.6784314, b: 0.48235297, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2825,6 +2833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bouteille4
       objectReference: {fileID: 0}
+    - target: {fileID: 6667779812515986218, guid: c7cb9b5154685b847839ce8b87b4832e, type: 3}
+      propertyPath: m_TagString
+      value: Liquid4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2995,7 +3007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.08627451, b: 0.08627451, a: 0.33333334}
+  m_Color: {r: 0.7294118, g: 0.75294125, b: 0.5411765, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3385,7 +3397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.08627451, b: 0.08627451, a: 0.33333334}
+  m_Color: {r: 0.5019608, g: 0.20392159, b: 0.14509805, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3803,6 +3815,10 @@ PrefabInstance:
     - target: {fileID: 2960408606103889780, guid: 547bc72dd4c2a4d4ea8434c5756f52a3, type: 3}
       propertyPath: m_Name
       value: Bouteille3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960408606103889780, guid: 547bc72dd4c2a4d4ea8434c5756f52a3, type: 3}
+      propertyPath: m_TagString
+      value: Liquid3
       objectReference: {fileID: 0}
     - target: {fileID: 5138485072604377128, guid: 547bc72dd4c2a4d4ea8434c5756f52a3, type: 3}
       propertyPath: m_Sprite
