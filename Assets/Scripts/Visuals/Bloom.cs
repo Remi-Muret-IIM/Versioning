@@ -22,11 +22,11 @@ public class PostProcessingIncrement : MonoBehaviour
     public float limitDistortion = 0.3f;
 
     [Header("Pas d’incrémentation")]
-    public float stepIntensity = 0.15f;
-    public float stepChromatic = 0.05f;
-    public float stepVignette = 0.02f;
-    public float stepGrain = 0.05f;
-    public float stepDistortion = 0.015f;
+    public float stepIntensity = 0.5f;
+    public float stepChromatic = 0.25f;
+    public float stepVignette = 0.1f;
+    public float stepGrain = 0.1f;
+    public float stepDistortion = 0.1f;
 
     void Start()
     {
