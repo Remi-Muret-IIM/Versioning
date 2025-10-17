@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class HandController : MonoBehaviour
 {
@@ -11,6 +10,11 @@ public class HandController : MonoBehaviour
     public float maxDrunk = 1f;
 
     private Transform heldBottle;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -52,16 +56,11 @@ public class HandController : MonoBehaviour
                 Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
-                if (hit != null && (
-                        hit.CompareTag("Bottle1") ||
-                        hit.CompareTag("Bottle2") ||
-                        hit.CompareTag("Bottle3") ||
-                        hit.CompareTag("Bottle4")))
+                if (hit != null && (hit.CompareTag("Bottle")))
                 {
 
                     audioSource.clip = audioClip;
                     audioSource.Play();
-                    Debug.Log("bouteil");
 
                     heldBottle = hit.transform;
                     heldBottle.SetParent(transform);
@@ -104,17 +103,5 @@ public class HandController : MonoBehaviour
     public void IncreaseDrunk(float amount)
     {
         drunkIntensity = Mathf.Clamp(drunkIntensity + amount, 0f, maxDrunk);
-    }
-
-    void Start()
-    {
-        // Vérifie si un AudioSource existe déjà, sinon en crée un
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();
-        }
-
-        audioSource.playOnAwake = false; // Ne pas jouer automatiquement
     }
 }
