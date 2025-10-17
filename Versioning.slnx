@@ -1,4 +1,3 @@
 ﻿<Solution>
-  <Project Path="AmplifyShaderEditor.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
 </Solution>
