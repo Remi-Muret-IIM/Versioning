@@ -20,6 +20,8 @@ public class Bottle : MonoBehaviour
     public Color liquid4Color = Color.yellow;
 
     private float pourTimer;
+    private Glass glass;
+    private new ParticleSystem particleSystem;
 
     void Update()
     {
@@ -81,5 +83,13 @@ public class Bottle : MonoBehaviour
             "Liquid4" => liquid4Color,
             _ => Color.white,
         };
+    }
+
+    public void RegisterGlass(Glass g)
+    {
+        glass = g;
+        var trigger = particleSystem.trigger;
+        trigger.enabled = true;
+        trigger.SetCollider(0, glass.GetComponent<Collider2D>());
     }
 }
