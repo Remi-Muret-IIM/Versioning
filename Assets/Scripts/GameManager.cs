@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioClip WinSound;
+    private AudioSource audioSource;
+
     public static GameManager Instance;
 
     public int minBottles = 1;
@@ -24,7 +28,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(StartNewRound());
-    }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
+    
+}
 
     public IEnumerator StartNewRound()
     {
@@ -91,7 +104,11 @@ public class GameManager : MonoBehaviour
     public void OnRoundEnd(bool win)
     {
         if (win)
+        {
             Debug.Log("Victoire !");
+            audioSource.clip = WinSound;
+            audioSource.Play();
+        }
         else
             Debug.Log("Défaite...");
 
