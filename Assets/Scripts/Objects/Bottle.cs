@@ -23,6 +23,16 @@ public class Bottle : MonoBehaviour
     private Glass glass;
     private new ParticleSystem particleSystem;
 
+    void Start()
+    {
+        // Get the ParticleSystem component on start
+        particleSystem = GetComponent<ParticleSystem>();
+        if (particleSystem == null)
+        {
+            Debug.LogWarning($"Bottle '{gameObject.name}' : Pas de ParticleSystem trouvé.");
+        }
+    }
+
     void Update()
     {
         HandlePouring();
@@ -88,8 +98,13 @@ public class Bottle : MonoBehaviour
     public void RegisterGlass(Glass g)
     {
         glass = g;
-        var trigger = particleSystem.trigger;
-        trigger.enabled = true;
-        trigger.SetCollider(0, glass.GetComponent<Collider2D>());
+        
+        // Only setup particle collision if we have a ParticleSystem
+        if (particleSystem != null)
+        {
+            var trigger = particleSystem.trigger;
+            trigger.enabled = true;
+            trigger.SetCollider(0, glass.GetComponent<Collider2D>());
+        }
     }
 }

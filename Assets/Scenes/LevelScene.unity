@@ -979,10 +979,10 @@ MonoBehaviour:
   - {fileID: 143253897}
   targetColor: {r: 1, g: 1, b: 1, a: 0.5}
   bottleKeys:
-  - Liquid1
-  - Liquid2
-  - Liquid3
-  - Liquid4
+  - Bottle
+  - Bottle
+  - Bottle
+  - Bottle
 --- !u!1 &464927277
 GameObject:
   m_ObjectHideFlags: 0

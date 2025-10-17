@@ -56,7 +56,7 @@ public class HandController : MonoBehaviour
                 Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
-                if (hit != null && (hit.CompareTag("Bottle")))
+                if (hit != null && (hit.CompareTag("Liquid1") || hit.CompareTag("Liquid2") || hit.CompareTag("Liquid3") || hit.CompareTag("Liquid4")))
                 {
 
                     audioSource.clip = audioClip;
