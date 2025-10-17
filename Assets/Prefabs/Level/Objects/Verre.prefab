@@ -418,4 +418,4 @@ MonoBehaviour:
   resetDelay: 1.5
   visualObject: {fileID: 5567710831122616570}
   fallAngleThreshold: 60
-  ExplosionClip: {fileID: 0}
+  ExplosionClip: {fileID: 8300000, guid: b6f0aa9abc9dc5641818ca2a43bfacc0, type: 3}
