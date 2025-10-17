@@ -312,10 +312,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3685120286352241487}
   - component: {fileID: 3683696689102591349}
-  - component: {fileID: 1734053473184955277}
-  - component: {fileID: 7760614167415777213}
-  - component: {fileID: 627328514583664267}
-  m_Layer: 8
+  - component: {fileID: 8619130034679161196}
+  - component: {fileID: 258541743603052469}
+  - component: {fileID: -7609184834859548559}
+  m_Layer: 0
   m_Name: Verre
   m_TagString: Glass
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ PolygonCollider2D:
       - {x: -0.34, y: -0.48}
       - {x: 0.34, y: -0.48}
   m_UseDelaunayMesh: 0
---- !u!114 &7760614167415777213
+--- !u!114 &258541743603052469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8026220108369532010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81348f9303c39d346a32d67baef892a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bae95a0e777ea14882b1c451fd7ec2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillSpeed: 10
@@ -435,7 +435,7 @@ MonoBehaviour:
   fillBottle2: 0
   fillBottle3: 0
   fillBottle4: 0
---- !u!114 &627328514583664267
+--- !u!114 &-7609184834859548559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
