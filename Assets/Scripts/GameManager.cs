@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class GameManager : MonoBehaviour
 {
     public AudioClip WinSound;
+    public AudioClip LooseSound;
     private AudioSource audioSource;
 
     public static GameManager Instance;
@@ -111,6 +112,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Debug.Log("Défaite...");
+            audioSource.clip = LooseSound;
+            audioSource.Play();
 
         if (win)
         {
