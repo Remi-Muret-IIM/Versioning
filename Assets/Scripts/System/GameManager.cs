@@ -18,6 +18,11 @@ public class GameManager : MonoBehaviour
     public GameObject glassPrefab;
     public float delayBeforeNextRound = 1f;
 
+    public GameObject winScreen;
+    public int winsToShowWinScreen = 5;
+    private int successCount = 0;
+    private bool winScreenShown = false;
+
     [HideInInspector] public Dictionary<string, float> targetQuantities = new Dictionary<string, float>();
     private GameObject currentGlass;
 
@@ -37,19 +42,22 @@ public class GameManager : MonoBehaviour
         }
 
         audioSource.playOnAwake = false;
-    
-}
+
+        if (winScreen != null)
+            winScreen.SetActive(false);
+
+    }
 
     public IEnumerator StartNewRound()
     {
-        // Reset previous targets
+        if (winScreenShown)
+            yield break;
+
         targetQuantities.Clear();
 
-        // Generate new random targets
         int numBottles = Random.Range(minBottles, maxBottles + 1);
         float remainingFill = totalTargetFill;
 
-        // Randomly select bottles and assign quantities
         List<GameObject> selectedBottles = new List<GameObject>();
         List<GameObject> availableBottles = new List<GameObject>(bottles);
 
@@ -60,7 +68,6 @@ public class GameManager : MonoBehaviour
             availableBottles.RemoveAt(index);
         }
 
-        // Distribute fill amounts
         for (int i = 0; i < selectedBottles.Count; i++)
         {
             float targetFill;
@@ -72,7 +79,7 @@ public class GameManager : MonoBehaviour
             {
                 targetFill = Random.Range(10f, remainingFill - (10f * (selectedBottles.Count - i - 1)));
             }
-            
+
             string bottleTag = selectedBottles[i].tag;
             targetQuantities[bottleTag] = targetFill;
             remainingFill -= targetFill;
@@ -80,7 +87,6 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Target généré: {bottleTag} -> {targetFill}%");
         }
 
-        // Spawn new glass
         if (currentGlass != null)
             Destroy(currentGlass);
 
@@ -103,13 +109,28 @@ public class GameManager : MonoBehaviour
         if (win)
         {
             Debug.Log("Victoire !");
-            audioSource.clip = WinSound;
-            audioSource.Play();
+            if (audioSource != null && WinSound != null)
+            {
+                audioSource.clip = WinSound;
+                audioSource.Play();
+            }
+
+            successCount++;
+            if (successCount >= winsToShowWinScreen)
+            {
+                ShowWinScreen();
+                return; 
+            }
         }
         else
+        {
             Debug.Log("Défaite...");
-        audioSource.clip = LooseSound;
-        audioSource.Play();
+            if (audioSource != null && LooseSound != null)
+            {
+                audioSource.clip = LooseSound;
+                audioSource.Play();
+            }
+        }
 
         if (win)
         {
@@ -120,5 +141,18 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(StartNewRound());
     }
-     public System.Action<Glass> OnGlassSpawned;
+
+     public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private void ShowWinScreen()
+    {
+        winScreenShown = true;
+        if (winScreen != null)
+            winScreen.SetActive(true);
+            Time.timeScale = 0f;
+    }
+    public System.Action<Glass> OnGlassSpawned;
 }
