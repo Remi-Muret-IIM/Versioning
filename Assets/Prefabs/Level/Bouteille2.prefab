@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7319614088797579531}
   - component: {fileID: 3601952770500075628}
   - component: {fileID: 4135836472489300315}
+  - component: {fileID: 3721882272096578834}
   - component: {fileID: 716983922489104306}
   m_Layer: 7
   m_Name: Bouteille2
@@ -130,8 +131,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abda217ecab3c3648a374af2f5f394e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CoulSound: {fileID: 0}
   targetZ: 105
   emissionRate: 50
+--- !u!114 &3721882272096578834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373485423124149318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5bb601d9937874da2b2216401a18dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: 6c8bb19806d7d4242a2c6e06d58072e7, type: 3}
 --- !u!60 &716983922489104306
 PolygonCollider2D:
   m_ObjectHideFlags: 0

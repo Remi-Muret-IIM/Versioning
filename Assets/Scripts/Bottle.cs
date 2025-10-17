@@ -1,8 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Bottle : MonoBehaviour
 {
+    public AudioClip CoulSound;
+    private AudioSource audioSource;
+
     public float targetZ = 100f;
     public float emissionRate = 50f;
 
@@ -16,6 +20,14 @@ public class Bottle : MonoBehaviour
         child = transform.GetChild(0).gameObject;
         particleSystem = child.GetComponent<ParticleSystem>();
         emission = particleSystem.emission;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
     }
 
     void Update()
@@ -30,8 +42,9 @@ public class Bottle : MonoBehaviour
         if (zRotation > 180f)
             zRotation -= 360f;
 
-        if (zRotation >= targetZ || zRotation <= -targetZ)
+        if (zRotation >= targetZ || zRotation <= -targetZ) { 
             emission.rateOverTime = emissionRate;
+            Debug.Log("glouglou");}
         else
             emission.rateOverTime = 0f;
     }
