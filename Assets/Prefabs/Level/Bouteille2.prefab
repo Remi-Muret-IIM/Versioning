@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1316885787584335098}
   - component: {fileID: 7319614088797579531}
   - component: {fileID: 3601952770500075628}
-  - component: {fileID: 3587113931055446815}
   - component: {fileID: 4135836472489300315}
+  - component: {fileID: 716983922489104306}
   m_Layer: 7
   m_Name: Bouteille2
   m_TagString: Bottle2
@@ -118,8 +118,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &3587113931055446815
-CapsuleCollider2D:
+--- !u!114 &4135836472489300315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373485423124149318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abda217ecab3c3648a374af2f5f394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetZ: 105
+  emissionRate: 50
+--- !u!60 &716983922489104306
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,22 +167,52 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
---- !u!114 &4135836472489300315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373485423124149318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abda217ecab3c3648a374af2f5f394e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetZ: 105
-  emissionRate: 50
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 2.9766667}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.46333334, y: -1.3983333}
+      - {x: 0.48000002, y: -1.3783333}
+      - {x: 0.48000002, y: 0.52833337}
+      - {x: 0.45333335, y: 0.575}
+      - {x: 0.39333335, y: 0.62833333}
+      - {x: 0.26000002, y: 0.7116667}
+      - {x: 0.21000001, y: 0.76500005}
+      - {x: 0.21000001, y: 1.345}
+      - {x: 0.20666668, y: 1.4816667}
+      - {x: 0.2, y: 1.4883333}
+      - {x: 0.09666667, y: 1.4883333}
+      - {x: 0.05666667, y: 1.485}
+      - {x: 0.006666667, y: 1.4783334}
+      - {x: -0.11666667, y: 1.4883333}
+      - {x: -0.20333333, y: 1.4883333}
+      - {x: -0.20666668, y: 1.4816667}
+      - {x: -0.21000001, y: 1.3483334}
+      - {x: -0.21000001, y: 0.76500005}
+      - {x: -0.29333335, y: 0.68833333}
+      - {x: -0.36, y: 0.6483334}
+      - {x: -0.40666667, y: 0.615}
+      - {x: -0.46666667, y: 0.555}
+      - {x: -0.4766667, y: 0.52500004}
+      - {x: -0.48000002, y: 0.49833333}
+      - {x: -0.48000002, y: -1.3783333}
+      - {x: -0.46333334, y: -1.3983333}
+      - {x: -0.39000002, y: -1.4350001}
+      - {x: -0.33666667, y: -1.4516667}
+      - {x: -0.2, y: -1.4783334}
+      - {x: -0.10666667, y: -1.4883333}
+      - {x: 0.123333335, y: -1.4883333}
+      - {x: 0.25, y: -1.4716667}
+      - {x: 0.34666666, y: -1.445}
+      - {x: 0.41333336, y: -1.4216667}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1626372947620865250
 GameObject:
   m_ObjectHideFlags: 0
