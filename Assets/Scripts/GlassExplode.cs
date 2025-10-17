@@ -12,10 +12,21 @@ public class GlassExplode : MonoBehaviour
     private Quaternion initialRotation;
     private bool isResetting = false;
 
+    public AudioClip ExplosionClip;
+    private AudioSource audioSource;
+
     void Start()
     {
         initialPosition = transform.position;
         initialRotation = transform.rotation;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        audioSource.playOnAwake = false;
     }
 
     void Update()
@@ -35,6 +46,9 @@ public class GlassExplode : MonoBehaviour
 
         if (explosionEffectPrefab != null)
             Instantiate(explosionEffectPrefab, transform.position, Quaternion.identity);
+            audioSource.clip = ExplosionClip;
+            audioSource.Play();
+            Debug.Log("boom");
 
         if (visualObject != null)
             visualObject.SetActive(false);
