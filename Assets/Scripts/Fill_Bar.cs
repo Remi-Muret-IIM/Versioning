@@ -14,18 +14,22 @@ public class Fill_Bar : MonoBehaviour
     public TextMeshProUGUI[] percentageTexts;
     public Color targetColor = new Color(1f, 1f, 1f, 0.5f);
 
-    private readonly string[] bottleNames = { "Bottle1", "Bottle2", "Bottle3", "Bottle4" };
+    [Header("Bottle keys (must match bottle.tag / GameManager keys)")]
+    public string[] bottleKeys = new string[] { "Liquid1", "Liquid2", "Liquid3", "Liquid4" };
 
     private void Start()
     {
-        gameManager.OnGlassSpawned += OnNewGlass;
+        if (gameManager != null)
+            gameManager.OnGlassSpawned += OnNewGlass;
+        else
+            Debug.LogWarning("Fill_Bar: GameManager non assigné.");
 
-        // Vérifications / configuration des sliders pour éviter les erreurs d'assignation
-        int n = bottleNames.Length;
+        int n = bottleKeys.Length;
 
         if (fillSliders == null || targetSliders == null || percentageTexts == null)
             Debug.LogWarning("Fill_Bar: un ou plusieurs tableaux UI ne sont pas assignés dans l'inspector.");
 
+        // configuration des sliders et vérifications
         for (int i = 0; i < n; i++)
         {
             if (fillSliders != null && i < fillSliders.Length && fillSliders[i] != null)
@@ -33,7 +37,6 @@ public class Fill_Bar : MonoBehaviour
                 fillSliders[i].minValue = 0f;
                 fillSliders[i].maxValue = 100f;
                 fillSliders[i].interactable = false;
-                // masquer le handle si présent
                 if (fillSliders[i].handleRect != null)
                     fillSliders[i].handleRect.gameObject.SetActive(false);
             }
@@ -50,14 +53,13 @@ public class Fill_Bar : MonoBehaviour
                 if (targetSliders[i].handleRect != null)
                     targetSliders[i].handleRect.gameObject.SetActive(false);
 
-                // couleur de la barre d'objectif
                 if (targetSliders[i].fillRect != null)
                 {
                     var img = targetSliders[i].fillRect.GetComponent<Image>();
                     if (img != null) img.color = targetColor;
                 }
 
-                // s'assurer que la target est derrière la fill (si les deux sont enfants du même container)
+                // essaye de mettre la target derrière la fill si possible
                 if (fillSliders != null && i < fillSliders.Length && fillSliders[i] != null)
                 {
                     int fillIndex = fillSliders[i].transform.GetSiblingIndex();
@@ -71,15 +73,19 @@ public class Fill_Bar : MonoBehaviour
 
             if (percentageTexts == null || i >= percentageTexts.Length || percentageTexts[i] == null)
                 Debug.LogWarning($"Fill_Bar: percentageTexts[{i}] non assigné.");
+
+            // log mapping slider <-> tag pour débug d'assignation
+            string key = (i < bottleKeys.Length) ? bottleKeys[i] : "N/A";
+            Debug.Log($"Fill_Bar mapping index {i} -> key '{key}'");
         }
 
-        // Vérifier s'il y a des références dupliquées (erreur courante dans l'inspector)
-        if (fillSliders != null && targetSliders != null)
+        // vérifier doublons d'assignation de slider
+        if (fillSliders != null)
         {
-            for (int i = 0; i < n; i++)
-                for (int j = 0; j < n; j++)
-                    if (i != j && fillSliders.Length > i && fillSliders.Length > j && fillSliders[i] == fillSliders[j])
-                        Debug.LogWarning($"Fill_Bar: fillSliders[{i}] et fillSliders[{j}] pointent vers le même Slider (erreur d'assignation).");
+            for (int i = 0; i < fillSliders.Length; i++)
+                for (int j = i + 1; j < fillSliders.Length; j++)
+                    if (fillSliders[i] != null && fillSliders[j] != null && fillSliders[i] == fillSliders[j])
+                        Debug.LogWarning($"Fill_Bar: fillSliders[{i}] et fillSliders[{j}] pointent vers le même Slider.");
         }
     }
 
@@ -97,23 +103,23 @@ public class Fill_Bar : MonoBehaviour
     private void Update()
     {
         if (glass != null)
-        {
             UpdateFillBars();
-        }
     }
 
     private void UpdateFillBars()
     {
-        for (int i = 0; i < bottleNames.Length; i++)
+        int n = bottleKeys.Length;
+        for (int i = 0; i < n; i++)
         {
-            float currentFill = Mathf.Clamp(GetBottleFill(bottleNames[i]), 0f, 100f);
+            string key = bottleKeys[i];
+            float currentFill = Mathf.Clamp(GetBottleFill(key), 0f, 100f);
 
             if (fillSliders != null && i < fillSliders.Length && fillSliders[i] != null)
                 fillSliders[i].value = currentFill;
 
             float targetFill = 0f;
-            if (gameManager != null && gameManager.targetQuantities != null && gameManager.targetQuantities.ContainsKey(bottleNames[i]))
-                targetFill = gameManager.targetQuantities[bottleNames[i]];
+            if (gameManager != null && gameManager.targetQuantities != null && gameManager.targetQuantities.ContainsKey(key))
+                targetFill = gameManager.targetQuantities[key];
 
             if (targetSliders != null && i < targetSliders.Length && targetSliders[i] != null)
                 targetSliders[i].value = Mathf.Clamp(targetFill, 0f, 100f);
@@ -123,14 +129,14 @@ public class Fill_Bar : MonoBehaviour
         }
     }
 
-    private float GetBottleFill(string bottleName)
+    private float GetBottleFill(string bottleKey)
     {
-        return bottleName switch
+        return bottleKey switch
         {
-            "Bottle1" => glass.fillBottle1,
-            "Bottle2" => glass.fillBottle2,
-            "Bottle3" => glass.fillBottle3,
-            "Bottle4" => glass.fillBottle4,
+            "Liquid1" => glass.fillLiquid1,
+            "Liquid2" => glass.fillLiquid2,
+            "Liquid3" => glass.fillLiquid3,
+            "Liquid4" => glass.fillLiquid4,
             _ => 0f
         };
     }

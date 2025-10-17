@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour
         currentGlass = Instantiate(glassPrefab, glassPrefab.transform.position, Quaternion.identity);
         Glass g = currentGlass.GetComponent<Glass>();
         
-        // Notifier les observateurs du nouveau verre
         OnGlassSpawned?.Invoke(g);
 
         foreach (var bottle in bottles)
@@ -114,8 +113,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Debug.Log("Défaite...");
-            audioSource.clip = LooseSound;
-            audioSource.Play();
+        audioSource.clip = LooseSound;
+        audioSource.Play();
 
         if (win)
         {
@@ -126,6 +125,5 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(StartNewRound());
     }
-
-    public System.Action<Glass> OnGlassSpawned;
+     public System.Action<Glass> OnGlassSpawned;
 }
