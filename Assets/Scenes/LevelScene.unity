@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: 'playlist.Array.data[4]'
       value: 
       objectReference: {fileID: 8300000, guid: 081dfe1e40ddf7c4aa14ca31905b2a96, type: 3}
+    - target: {fileID: 9039360529946599808, guid: e8e518b129635c047ad29a39f389485e, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
