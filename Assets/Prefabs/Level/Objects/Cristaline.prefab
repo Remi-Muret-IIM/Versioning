@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2596544620759522457}
   - component: {fileID: 9141560344916857297}
   - component: {fileID: 3443065487482822235}
-  - component: {fileID: 4768060477476016684}
+  - component: {fileID: 1448944809924090405}
   m_Layer: 0
   m_Name: Cristaline
   m_TagString: Untagged
@@ -116,8 +116,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!61 &4768060477476016684
-BoxCollider2D:
+--- !u!60 &1448944809924090405
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -160,5 +160,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 1.4}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.25659218, y: 0.48329985}
+      - {x: -0.2666056, y: -0.8337742}
+      - {x: -0.10057023, y: -0.8760483}
+      - {x: 0.12729895, y: -0.88398516}
+      - {x: 0.26388288, y: -0.80994326}
+      - {x: 0.2768011, y: 0.48070675}
+      - {x: 0.12771317, y: 0.6406108}
+      - {x: 0.1309121, y: 0.8606884}
+      - {x: -0.122523665, y: 0.8812244}
+      - {x: -0.13058221, y: 0.63537997}
+  m_UseDelaunayMesh: 0
