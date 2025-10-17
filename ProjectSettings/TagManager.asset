@@ -9,6 +9,11 @@ TagManager:
   - Bottle3
   - Bottle4
   - Glass
+  - Bottle
+  - Liquid1
+  - Liquid2
+  - Liquid3
+  - Liquid4
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - Particle
   - Bottle
   - Glass
-  - 
+  - Surface
   - 
   - 
   - 

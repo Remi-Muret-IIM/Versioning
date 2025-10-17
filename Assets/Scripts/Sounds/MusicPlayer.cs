@@ -2,19 +2,17 @@
 
 public class MusicPlayer : MonoBehaviour
 {
-    [Header("Liste des musiques disponibles")]
     public AudioClip[] playlist;
 
-    [Header("Source audio principale")]
-    public AudioSource audioSource;
-
     private int lastIndex = -1;
+    private AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (playlist.Length == 0 || audioSource == null)
         {
-            Debug.LogWarning("⚠️ Aucun clip ou AudioSource assigné au MusicPlayer !");
             return;
         }
 
@@ -23,7 +21,6 @@ public class MusicPlayer : MonoBehaviour
 
     void Update()
     {
-        // Si la musique s'arrête, on lance la suivante
         if (!audioSource.isPlaying)
         {
             PlayRandomMusic();
@@ -44,7 +41,5 @@ public class MusicPlayer : MonoBehaviour
         lastIndex = newIndex;
         audioSource.clip = playlist[newIndex];
         audioSource.Play();
-
-        Debug.Log("🎵 Lecture de : " + playlist[newIndex].name);
     }
 }
