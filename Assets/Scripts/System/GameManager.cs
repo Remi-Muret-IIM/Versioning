@@ -39,49 +39,42 @@ public class GameManager : MonoBehaviour
         GenerateNewTarget();
 
         currentGlass = Instantiate(glassPrefab, glassPrefab.transform.position, Quaternion.identity);
-
-        Glass g = currentGlass.GetComponent<Glass>();
-        foreach (var bottle in bottles)
-        {
-            bottle.GetComponent<Bottle>().RegisterGlass(g);
-        }
     }
 
     private void GenerateNewTarget()
     {
         targetQuantities.Clear();
 
-        int bottleCount = Random.Range(minBottles, maxBottles + 1);
-        List<string> allBottles = new List<string> { "Bottle1", "Bottle2", "Bottle3", "Bottle4" };
+        int bottleCount = Random.Range(minBottles, Mathf.Min(maxBottles + 1, bottles.Count));
+        List<GameObject> available = new List<GameObject>(bottles);
 
-        List<string> chosenBottles = new List<string>();
+        List<GameObject> chosen = new List<GameObject>();
         for (int i = 0; i < bottleCount; i++)
         {
-            int index = Random.Range(0, allBottles.Count);
-            chosenBottles.Add(allBottles[index]);
-            allBottles.RemoveAt(index);
+            int index = Random.Range(0, available.Count);
+            chosen.Add(available[index]);
+            available.RemoveAt(index);
         }
 
         float remaining = totalTargetFill;
-        for (int i = 0; i < chosenBottles.Count; i++)
+        foreach (var bottleObj in chosen)
         {
-            string bottle = chosenBottles[i];
-            float amount;
+            var bottle = bottleObj.GetComponent<Bottle>();
+            string id = bottle.tag;
 
-            if (i == chosenBottles.Count - 1)
+            float amount;
+            if (bottleObj == chosen[^1])
                 amount = remaining;
             else
-                amount = Random.Range(10f, remaining - 10f * (chosenBottles.Count - i - 1));
+                amount = Random.Range(10f, remaining - 10f * (chosen.Count - chosen.IndexOf(bottleObj) - 1));
 
             remaining -= amount;
-            targetQuantities[bottle] = Mathf.Round(amount);
+            targetQuantities[id] = Mathf.Round(amount);
         }
 
         string debugMsg = "Objectif :\n";
         foreach (var kvp in targetQuantities)
-        {
             debugMsg += $"{kvp.Key} → {kvp.Value}%\n";
-        }
 
         Debug.Log(debugMsg);
     }
