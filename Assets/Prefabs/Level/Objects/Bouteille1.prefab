@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7905035701806523419}
   - component: {fileID: 1476181670385677878}
   - component: {fileID: -4511477885739880710}
+  - component: {fileID: 8950884183871566490}
   - component: {fileID: 4407513712771915651}
   - component: {fileID: 14026556619342600}
-  - component: {fileID: 8950884183871566490}
   m_Layer: 7
   m_Name: Bouteille1
   m_TagString: Bottle
@@ -118,42 +118,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4407513712771915651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5204566021710856094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abda217ecab3c3648a374af2f5f394e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnOffset: 1.5
-  targetZ: 91
-  pourRate: 0.05
-  dropPrefab: {fileID: 430688004565042864, guid: 544f592e6eed6d34e8586636e5735fb7, type: 3}
-  dropTag: Liquid1
-  dropScale: 0.3
-  dropForce: 0.1
-  liquid1Color: {r: 0, g: 1, b: 0, a: 1}
-  liquid2Color: {r: 1, g: 0, b: 0, a: 1}
-  liquid3Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  liquid4Color: {r: 0, g: 0, b: 1, a: 1}
---- !u!114 &14026556619342600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5204566021710856094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a5bb601d9937874da2b2216401a18dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionSound: {fileID: 8300000, guid: 6c8bb19806d7d4242a2c6e06d58072e7, type: 3}
 --- !u!60 &8950884183871566490
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -200,49 +164,50 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.48000002, y: -1.3783333}
+    - - {x: -0.4545884, y: 0.5153048}
+      - {x: -0.47064865, y: -1.3582492}
+      - {x: -0.16474867, y: -1.4573404}
+      - {x: 0.18599224, y: -1.4501045}
+      - {x: 0.46522832, y: -1.3803252}
       - {x: 0.48000002, y: 0.52833337}
-      - {x: 0.45333335, y: 0.575}
-      - {x: 0.39333335, y: 0.62833333}
-      - {x: 0.26000002, y: 0.7116667}
-      - {x: 0.21000001, y: 0.76500005}
-      - {x: 0.21000001, y: 0.925}
-      - {x: 0.23666668, y: 0.94166666}
-      - {x: 0.25666666, y: 0.97833335}
-      - {x: 0.25333333, y: 1.1583334}
-      - {x: 0.24666667, y: 1.2016667}
-      - {x: 0.21666667, y: 1.265}
-      - {x: 0.21000001, y: 1.355}
-      - {x: 0.20666668, y: 1.4816667}
-      - {x: 0.2, y: 1.4883333}
-      - {x: 0.09666667, y: 1.4883333}
-      - {x: 0.05666667, y: 1.485}
-      - {x: 0.006666667, y: 1.4783334}
-      - {x: -0.11666667, y: 1.4883333}
-      - {x: -0.20333333, y: 1.4883333}
-      - {x: -0.20666668, y: 1.4816667}
-      - {x: -0.21000001, y: 1.355}
-      - {x: -0.21666667, y: 1.265}
-      - {x: -0.23333333, y: 1.2283334}
-      - {x: -0.24666667, y: 1.1983334}
-      - {x: -0.25333333, y: 1.115}
-      - {x: -0.25333333, y: 0.9916667}
-      - {x: -0.24666667, y: 0.9583334}
-      - {x: -0.21333334, y: 0.9216667}
-      - {x: -0.21000001, y: 0.76500005}
-      - {x: -0.29333335, y: 0.69166666}
-      - {x: -0.40666667, y: 0.61833334}
-      - {x: -0.46666667, y: 0.555}
-      - {x: -0.4766667, y: 0.52500004}
-      - {x: -0.48000002, y: 0.49833333}
-      - {x: -0.48000002, y: -1.3783333}
-      - {x: -0.46333334, y: -1.3983333}
-      - {x: -0.39000002, y: -1.4350001}
-      - {x: -0.33666667, y: -1.4516667}
-      - {x: -0.2, y: -1.4783334}
-      - {x: -0.10666667, y: -1.4883333}
-      - {x: 0.123333335, y: -1.4883333}
-      - {x: 0.25, y: -1.4716667}
-      - {x: 0.35, y: -1.4483334}
-      - {x: 0.46333334, y: -1.4016666}
+      - {x: 0.14537787, y: 0.7624517}
+      - {x: 0.1322397, y: 1.4183089}
+      - {x: -0.1349876, y: 1.4346951}
+      - {x: -0.17159855, y: 0.7315266}
   m_UseDelaunayMesh: 0
+--- !u!114 &4407513712771915651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204566021710856094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abda217ecab3c3648a374af2f5f394e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnOffset: 1.5
+  targetZ: 91
+  pourRate: 0.05
+  dropPrefab: {fileID: 430688004565042864, guid: 544f592e6eed6d34e8586636e5735fb7, type: 3}
+  dropTag: Liquid1
+  dropScale: 0.3
+  dropForce: 0.1
+  liquid1Color: {r: 0, g: 1, b: 0, a: 1}
+  liquid2Color: {r: 1, g: 0, b: 0, a: 1}
+  liquid3Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  liquid4Color: {r: 0, g: 0, b: 1, a: 1}
+--- !u!114 &14026556619342600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5204566021710856094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5bb601d9937874da2b2216401a18dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 8300000, guid: 6c8bb19806d7d4242a2c6e06d58072e7, type: 3}
